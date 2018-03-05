@@ -1,0 +1,6 @@
+.idea/
+node_modules/
+*.log
+.static_storage/
+.media/
+local_settings.py
