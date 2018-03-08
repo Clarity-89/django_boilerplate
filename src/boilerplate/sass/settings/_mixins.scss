@@ -1,0 +1,5 @@
+@mixin xs-screen() {
+  @media only screen and (max-width: $xs-screen) {
+    @content;
+  }
+}

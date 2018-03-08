@@ -1,19 +1,15 @@
 var webpack = require('webpack');
 var paths = require('./build/paths');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
-var extractMainCss = new ExtractTextPlugin({
+var extractMainCss = new MiniCssExtractPlugin({
     filename: '../css/screen.css'
 });
 
 
-var extractPrintCss = new ExtractTextPlugin({
+var extractPrintCss = new MiniCssExtractPlugin({
     filename: '../css/print.css'
-});
-
-// Separate loader for styles with Bootstrap
-var extractBSCss = new ExtractTextPlugin({
-    filename: '../css/style.css'
 });
 
 var extractConfig = {
@@ -30,11 +26,11 @@ var extractConfig = {
             sourceMap: true,
             minimize: true
         }
-    }],
+    }]
 };
 /**
  * Webpack configuration
- * Run using "webpack" or "gulp js"
+ * Run using "webpack"
  */
 module.exports = {
     // Path to the js entry point (source)
@@ -50,13 +46,10 @@ module.exports = {
         rules: [
             {
                 test: /print\.(css|sass|scss)$/,
-                use: extractPrintCss.extract(extractConfig)
+                use: extractPrintCss.loader
             }, {
                 test: /screen\.(css|sass|scss)$/,
-                use: extractMainCss.extract(extractConfig)
-            }, {
-                test: /style\.(css|sass|scss)$/,
-                use: extractBSCss.extract(extractConfig)
+                use: extractMainCss.loader
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -82,9 +75,42 @@ module.exports = {
 
     // Minify output
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({minimize: true}),
-        extractMainCss, extractPrintCss, extractBSCss
+        extractMainCss, extractPrintCss
     ],
+
+    optimization: {
+        minimizer: [
+            new UglifyJSPlugin({
+                uglifyOptions: {
+                    output: {
+                        comments: false
+                    },
+                    compress: {
+                        unsafe_comps: true,
+                        properties: true,
+                        keep_fargs: false,
+                        pure_getters: true,
+                        collapse_vars: true,
+                        unsafe: true,
+                        warnings: false,
+                        sequences: true,
+                        dead_code: true,
+                        drop_debugger: true,
+                        comparisons: true,
+                        conditionals: true,
+                        evaluate: true,
+                        booleans: true,
+                        loops: true,
+                        unused: true,
+                        hoist_funs: true,
+                        if_return: true,
+                        join_vars: true,
+                        drop_console: true
+                    }
+                }
+            }),
+        ]
+    },
 
     watch: true
 };

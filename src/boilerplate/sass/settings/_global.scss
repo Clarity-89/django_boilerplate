@@ -1,0 +1,39 @@
+/* Overrides for global styles */
+a.no-underline {
+  text-decoration: none;
+  background-image: none;
+  color: inherit;
+
+  &.active {
+    text-decoration: underline;
+  }
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Sticky footer*/
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.errorlist {
+  li {
+    color: red;
+  }
+}

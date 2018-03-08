@@ -1,0 +1,13 @@
+@import "settings/all";
+@import "components/all";
+
+@page {
+  size: a4 portrait;
+  margin: 10mm;
+}
+
+@media print {
+  p {
+    font-size: 12px;
+  }
+}
