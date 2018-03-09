@@ -1,0 +1,34 @@
+{% load i18n static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    {% block main_css %}
+        <link href="{% static 'css/screen.css' %}" media="screen" rel="stylesheet"/>
+    {% endblock %}
+    <link href="{% static 'css/print.css' %}" media="print" rel="stylesheet"/>
+    {% block extra_css %}{% endblock %}
+    <link rel="shortcut icon" href="">
+</head>
+
+<body class="{% block body-class %}{% endblock %}">
+
+{% block header %}
+
+{% endblock %}
+
+<main>
+    {% block content %}
+        Test demo page for Django boilerplate
+    {% endblock %}
+</main>
+
+<footer class="footer">
+</footer>
+</body>
+</html>
