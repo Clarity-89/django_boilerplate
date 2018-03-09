@@ -1,44 +1,46 @@
 {
-    "name": "boilerplate",
-    "version": "1.0.0",
-    "description": "Boilerplate app for Django 2",
-    "main": "src/static/boilerplate/js/app.js",
-    "directories": {
-        "doc": "doc"
-    },
-    "scripts": {
-        "build": "webpack --config webpack.config.js",
-        "test": "gulp test"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Clarity-89/django_boilerplate"
-    },
-    "author": "Oleksandr Khomenko",
-    "license": "MIT",
-    "dependencies": {
-        "@fortawesome/fontawesome": "^1.1.4",
-        "bootstrap": "^4.0.0",
-        "bourbon-neat": "^1.8.0",
-        "font-awesome": "^4.7.0",
-        "material-design-icons": "2.2.3",
-        "normalize.css": "^4.0.0",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.0.0-beta.40",
-        "@babel/preset-env": "^7.0.0-beta.40",
-        "@babel/preset-react": "^7.0.0-beta.40",
-        "babel-loader": "^8.0.0-beta.0",
-        "css-loader": "^0.28.10",
-        "file-loader": "^1.1.11",
-        "mini-css-extract-plugin": "^0.2.0",
-        "node-sass": "^4.7.2",
-        "sass-loader": "^6.0.7",
-        "style-loader": "^0.20.2",
-        "uglifyjs-webpack-plugin": "^1.2.2",
-        "webpack": "^4.1.1",
-        "webpack-cli": "^2.0.10"
-    }
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate app for Django 2",
+  "main": "src/static/boilerplate/js/app.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "build": "webpack --config webpack/config.prod.js",
+    "dev": "webpack --config webpack/config.dev.js",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Clarity-89/django_boilerplate"
+  },
+  "author": "Oleksandr Khomenko",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.4",
+    "bootstrap": "^4.0.0",
+    "bourbon-neat": "^1.8.0",
+    "font-awesome": "^4.7.0",
+    "material-design-icons": "2.2.3",
+    "normalize.css": "^4.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-react": "^7.0.0-beta.40",
+    "babel-loader": "^8.0.0-beta.0",
+    "css-loader": "^0.28.10",
+    "file-loader": "^1.1.11",
+    "mini-css-extract-plugin": "^0.2.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.2",
+    "uglifyjs-webpack-plugin": "^1.2.2",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-merge": "^4.1.2"
+  }
 }

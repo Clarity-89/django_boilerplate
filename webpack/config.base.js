@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-var paths = require('./build/paths');
+var paths = require('./paths');
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
@@ -111,7 +111,4 @@ module.exports = {
             }),
         ]
     },
-
-    watch: true,
-    mode: 'development',
 };

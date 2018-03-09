@@ -6,7 +6,7 @@ var fs = require('fs');
 var pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
 
 /** Name of the sources directory */
-var sourcesRoot = 'src/' + pkg.name + '/';
+var sourcesRoot = '../src/' + pkg.name + '/';
 
 /** Name of the static (source) directory */
 var staticRoot = sourcesRoot + 'static/';
