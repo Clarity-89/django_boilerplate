@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 from django.db import migrations, models
 import django.utils.timezone
-import clarityv2.accounts.managers
+import boilerplate.accounts.managers
 
 
 class Migration(migrations.Migration):
@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'users',
             },
             managers=[
-                ('objects', clarityv2.accounts.managers.UserManager()),
+                ('objects', boilerplate.accounts.managers.UserManager()),
             ],
         ),
     ]

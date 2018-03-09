@@ -1,5 +1,5 @@
 """
-WSGI config for clarityv2 project.
+WSGI config for boilerplate project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

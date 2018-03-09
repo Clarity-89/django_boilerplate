@@ -1,6 +1,6 @@
 import os
 from django.utils.translation import ugettext_lazy as _
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 DJANGO_PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
@@ -62,7 +62,7 @@ INSTALLED_APPS = [
     'boilerplate.accounts',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     # 'django.middleware.locale.LocaleMiddleware',
@@ -95,6 +95,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_admin_index.context_processors.dashboard'
             ],
             'loaders': RAW_TEMPLATE_LOADERS
         },
@@ -237,7 +238,7 @@ LOGGING = {
         'project': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(LOGGING_DIR, 'clarityv2.log'),
+            'filename': os.path.join(LOGGING_DIR, 'boilerplate.log'),
             'formatter': 'verbose',
             'maxBytes': 1024 * 1024 * 10,  # 10 MB
             'backupCount': 10
@@ -305,6 +306,15 @@ ACCOUNT_USERNAME_REQUIRED = False
 
 ADMIN_INDEX_SHOW_REMAINING_APPS = True
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+    'axes_cache': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+
 # Django-axes
 AXES_LOGIN_FAILURE_LIMIT = 30  # Default: 3
 AXES_LOCK_OUT_AT_FAILURE = True  # Default: True
@@ -313,10 +323,9 @@ AXES_COOLOFF_TIME = 1  # One hour
 AXES_BEHIND_REVERSE_PROXY = True  # Default: False (we are typically using Nginx as reverse proxy)
 AXES_ONLY_USER_FAILURES = False  # Default: False (you might want to block on username rather than IP)
 AXES_LOCK_OUT_BY_COMBINATION_USER_AND_IP = False  # Default: False (you might want to block on username and IP)
+AXES_CACHE = 'axes_cache'
 
 # Django-hijack (and Django-hijack-admin)
-from django.core.urlresolvers import reverse_lazy
-
 HIJACK_LOGIN_REDIRECT_URL = '/'
 HIJACK_LOGOUT_REDIRECT_URL = reverse_lazy('admin:accounts_user_changelist')
 HIJACK_REGISTER_ADMIN = False

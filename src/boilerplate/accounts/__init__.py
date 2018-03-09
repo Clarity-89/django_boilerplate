@@ -1,1 +1,1 @@
-default_app_config = 'clarityv2.accounts.apps.AccountsConfig'
+default_app_config = 'boilerplate.accounts.apps.AccountsConfig'
