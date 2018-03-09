@@ -13,20 +13,20 @@ var extractPrintCss = new MiniCssExtractPlugin({
 });
 
 var extractConfig = {
-    fallback: 'style-loader',
-    use: [{
+    css: {
         loader: 'css-loader',
         options: {
             sourceMap: true,
             minimize: true
         }
-    }, {
+    },
+    sass: {
         loader: 'sass-loader',
         options: {
             sourceMap: true,
             minimize: true
         }
-    }]
+    }
 };
 /**
  * Webpack configuration
@@ -46,10 +46,10 @@ module.exports = {
         rules: [
             {
                 test: /print\.(css|sass|scss)$/,
-                use: extractPrintCss.loader
+                use: [MiniCssExtractPlugin.loader, extractConfig.css, extractConfig.sass]
             }, {
                 test: /screen\.(css|sass|scss)$/,
-                use: extractMainCss.loader
+                use: [MiniCssExtractPlugin.loader, extractConfig.css, extractConfig.sass]
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -112,5 +112,6 @@ module.exports = {
         ]
     },
 
-    watch: true
+    watch: true,
+    mode: 'development',
 };
