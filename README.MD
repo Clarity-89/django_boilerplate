@@ -41,7 +41,9 @@ $ pip-compile --upgrade base.in
 ### How to use the generated project
 
 ##### Install required packages
-`$ pip install -r requirements/base.txt`
+```
+$ pip install -r requirements/base.txt
+```
 
 ##### Create the database and the user
 For dev environment the db, username and password default to the project name
