@@ -56,13 +56,13 @@ $ chmod +x src/manage.py
 $ src/manage.py migrate
 ``` 
 
-##### Install front-end dependencies and dev build task
+##### Install front-end dependencies and run dev build task
 ```
 $ npm install
 $ npm run dev
 ```
 
-###### Start the dev server
+##### Start the dev server
 ```
 $ (python) src/manage.py runserver 
 ```
