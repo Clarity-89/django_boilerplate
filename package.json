@@ -1,8 +1,8 @@
 {
-  "name": "boilerplate",
+  "name": "{{ project_name|lower }}",
   "version": "1.0.0",
-  "description": "Boilerplate app for Django 2",
-  "main": "src/static/boilerplate/js/app.js",
+  "description": "{{ project_name }} app",
+  "main": "src/static/{{ project_name|lower }}/js/app.js",
   "directories": {
     "doc": "doc"
   },
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Clarity-89/django_boilerplate"
+    "url": "https://github.com/Clarity-89/{{ project_name|lower }}"
   },
   "author": "Oleksandr Khomenko",
   "license": "MIT",

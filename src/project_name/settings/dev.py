@@ -13,9 +13,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'boilerplate',
-        'USER': 'boilerplate',
-        'PASSWORD': 'boilerplate',
+        'NAME': '{{ project_name|lower }}',
+        'USER': '{{ project_name|lower }}',
+        'PASSWORD': '{{ project_name|lower }}',
         'HOST': 'localhost',  # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',  # Set to empty string for default.
     }
@@ -26,7 +26,7 @@ DATABASES = {
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 LOGGING['loggers'].update({
-    'boilerplate': {
+    '{{ project_name|lower }}': {
         'handlers': ['console'],
         'level': 'DEBUG',
         'propagate': True,

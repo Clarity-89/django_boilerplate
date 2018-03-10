@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'ckeditor',
 
     # Project applications.
-    'boilerplate.accounts',
+    '{{ project_name|lower }}.accounts',
 ]
 
 MIDDLEWARE = [
@@ -73,7 +73,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'boilerplate.urls'
+ROOT_URLCONF = '{{ project_name|lower }}.urls'
 
 # List of callables that know how to import templates from various sources.
 RAW_TEMPLATE_LOADERS = (
@@ -102,7 +102,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'boilerplate.wsgi.application'
+WSGI_APPLICATION = '{{ project_name|lower }}.wsgi.application'
 
 # Database: Defined in target specific settings files.
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -238,7 +238,7 @@ LOGGING = {
         'project': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(LOGGING_DIR, 'boilerplate.log'),
+            'filename': os.path.join(LOGGING_DIR, '{{ project_name|lower }}.log'),
             'formatter': 'verbose',
             'maxBytes': 1024 * 1024 * 10,  # 10 MB
             'backupCount': 10
@@ -253,7 +253,7 @@ LOGGING = {
         },
     },
     'loggers': {
-        'boilerplate': {
+        '{{ project_name|lower }}': {
             'handlers': ['project'],
             'level': 'INFO',
             'propagate': True,
@@ -288,7 +288,7 @@ AUTHENTICATION_BACKENDS = [
 #
 # Custom settings
 #
-PROJECT_NAME = 'boilerplate'
+PROJECT_NAME = '{{ project_name|lower }}'
 ENVIRONMENT = None
 SHOW_ALERT = True
 SITE_ID = 1

@@ -1,8 +1,7 @@
-{% templatetag openblock %} load static {% templatetag closeblock %} <!DOCTYPE html>
+{% templatetag openblock %} load i18n static {% templatetag closeblock %} <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{% templatetag openblock %} block title {% templatetag closeblock %}{% templatetag openblock %}
-            endblock {% templatetag closeblock %}</title>
+        <title>{% templatetag openblock %} block title {% templatetag closeblock %}{{ project_name|title }}{% templatetag openblock %} endblock {% templatetag closeblock %}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">

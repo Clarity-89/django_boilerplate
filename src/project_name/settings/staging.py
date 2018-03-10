@@ -14,9 +14,9 @@ ADMINS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'boilerplate',
-        'USER': 'boilerplate',
-        'PASSWORD': 'boilerplate',
+        'NAME': '{{ project_name|lower }}',
+        'USER': '{{ project_name|lower }}',
+        'PASSWORD': '{{ project_name|lower }}',
         'HOST': '',  # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',  # Set to empty string for default.
     }
@@ -51,7 +51,7 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [
 ]
 
 LOGGING['loggers'].update({
-    'boilerplate': {
+    '{{ project_name|lower }}': {
         'handlers': ['sentry'],
         'level': 'WARNING',
         'propagate': False,

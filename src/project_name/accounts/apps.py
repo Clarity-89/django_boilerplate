@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class AccountsConfig(AppConfig):
-    name = 'boilerplate.accounts'
+    name = '{{ project_name|lower }}.accounts'

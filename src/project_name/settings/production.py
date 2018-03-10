@@ -60,7 +60,7 @@ LOGGING['loggers'].update({
         'level': 'ERROR',
         'propagate': False,
     },
-    'boilerplate': {
+    '{{ project_name|lower }}': {
         'handlers': ['project'],
         'level': 'WARNING',
         'propagate': True,
