@@ -7,7 +7,7 @@ DJANGO_PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.
 BASE_DIR = os.path.abspath(os.path.join(DJANGO_PROJECT_DIR, os.path.pardir, os.path.pardir))
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'vs124jhuwpst%gi*4n(4*h!^gp)9@&98rene5)o4312jw**@h58'
