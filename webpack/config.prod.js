@@ -1,7 +1,7 @@
 var merge = require('webpack-merge');
-var prodConfig = require('./config.prod.js');
+var baseConfig = require('./config.base.js');
 
-module.exports = merge(prodConfig, {
-    watch: true,
+module.exports = merge(baseConfig, {
+    watch: false,
     mode: 'production',
 });
