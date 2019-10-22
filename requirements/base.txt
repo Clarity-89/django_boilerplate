@@ -47,7 +47,7 @@ lxml==4.4.1               # via weasyprint
 oauthlib==3.1.0           # via requests-oauthlib
 odfpy==1.4.0              # via tablib
 openpyxl==2.6.2           # via tablib
-pillow==6.1.0
+pillow==6.2.0
 polib==1.1.0              # via django-rosetta
 psycopg2==2.8.3
 pycparser==2.19           # via cffi
