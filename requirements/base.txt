@@ -7,7 +7,7 @@
 babel==2.7.0              # via django-phonenumber-field
 backports.csv==1.0.7      # via tablib
 cairocffi==1.0.2          # via cairosvg, weasyprint
-cairosvg==2.4.0           # via weasyprint
+cairosvg==2.5.1           # via weasyprint
 certifi==2019.6.16        # via requests
 cffi==1.12.3              # via cairocffi, weasyprint
 chardet==3.0.4            # via requests
