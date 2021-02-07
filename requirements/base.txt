@@ -43,7 +43,7 @@ et-xmlfile==1.0.1         # via openpyxl
 html5lib==1.0.1           # via weasyprint
 idna==2.8                 # via requests
 jdcal==1.4.1              # via openpyxl
-lxml==4.4.1               # via weasyprint
+lxml==4.6.2               # via weasyprint
 oauthlib==3.1.0           # via requests-oauthlib
 odfpy==1.4.0              # via tablib
 openpyxl==2.6.2           # via tablib
