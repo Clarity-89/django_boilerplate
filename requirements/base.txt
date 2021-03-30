@@ -96,7 +96,8 @@ django==2.2.18
     #   django-rosetta
     #   django-sendfile
     #   django-sniplates
-djangorestframework==3.10.2
+    #   djangorestframework
+djangorestframework==3.11.2
     # via -r base.in
 et-xmlfile==1.0.1
     # via openpyxl
