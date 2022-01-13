@@ -115,7 +115,7 @@ odfpy==1.4.0
     # via tablib
 openpyxl==2.6.2
     # via tablib
-pillow==8.3.2
+pillow==9.0.0
     # via
     #   -r base.in
     #   cairosvg
