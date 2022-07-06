@@ -6,7 +6,7 @@
 #
 babel==2.9.1
     # via django-phonenumber-field
-backports.csv==1.0.7
+backports-csv==1.0.7
     # via tablib
 cairocffi==1.0.2
     # via
@@ -107,7 +107,7 @@ idna==2.8
     # via requests
 jdcal==1.4.1
     # via openpyxl
-lxml==4.6.5
+lxml==4.9.1
     # via weasyprint
 oauthlib==3.1.0
     # via requests-oauthlib
